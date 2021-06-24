@@ -2,6 +2,8 @@ html {
     font-size: 14px;
 }
 
+/*------Media Column------*/
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -19,9 +21,13 @@ html {
     }
 }
 
+/*------Container Column------*/
+
 .container{
     max-width: 960px;
 }
+
+/*------Team Column------*/
 
 .team{
     overflow-x: scroll;
@@ -29,6 +35,8 @@ html {
     white-space: nowrap;
     margin-bottom: 2rem;
 }
+
+/*------Card-Deck Column------*/
 
 .card-deck .card{
     min-width: 220px;
