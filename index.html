@@ -29,6 +29,8 @@
             <em>Development</em></strong> news from around the world. </p>
         </div>
 
+        <!-----------Team column--------->
+        
         <div class="container team">
             <img src="img/thandi.jpg" class="img-thumbnail rounded-circle" width="90" />
             <img src="img/john.jpg" class="img-thumbnail rounded-circle" width="90" />
@@ -40,7 +42,9 @@
             <img src="img/andile.jpg" class="img-thumbnail rounded-circle" width="90" />
             <img src="img/lee.jpg" class="img-thumbnail rounded-circle" width="90" />
         </div>
-
+    
+        <!-----------display column--------->
+        
         <div class="row container mx-auto">
             <div class="column" id="posts">
                 Loading content...
@@ -50,6 +54,8 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script>
+            
+            // get sever functions //
             var rootPath;
 
             function init(){
@@ -59,6 +65,7 @@
                 document.getElementById("getPopular").addEventListener('click', getPopularPosts)
                 document.getElementById("getLatest").addEventListener('click', getLatestPosts)
 
+                
                 getAllPosts();
             }
 
@@ -80,6 +87,7 @@
                 setActiveLink(category);
             }
 
+            // fetch posts script functions //
             function fetchPosts(category){
                 fetch(rootPath + 'get-posts/?category=' + category)
                 .then(function(response){
@@ -90,6 +98,7 @@
                 })
             }
 
+            // display posts function //
             function displayPosts(data){
                 var output = "";
                 
@@ -117,6 +126,7 @@
                 document.getElementById("posts").innerHTML = output;
             }
 
+            // active link function //
             function setActiveLink(id){
                 document.getElementById("getAll").classList.remove("active");
                 document.getElementById("getPopular").classList.remove("active");
